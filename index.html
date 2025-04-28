@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSS Media Queries Task</title>
+  <style>
+    /* 1. Mobile-Friendly Navigation */
+    nav {
+      display: flex;
+      justify-content: space-around;
+      background-color: #f8f8f8;
+      padding: 10px;
+    }
+    nav a {
+      padding: 10px;
+      text-decoration: none;
+      color: #333;
+    }
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+      nav a {
+        margin: 10px 0;
+      }
+    }
+
+    /* 2. Two-Column to Single-Column Layout */
+    .container {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px;
+      flex-wrap: wrap;
+    }
+    .content {
+      width: 48%;
+      padding: 20px;
+      background-color: #f4f4f4;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      .content {
+        width: 100%;
+      }
+    }
+
+    /* 3. Resizing Text for Mobile */
+    h1.main-heading {
+      font-size: 36px;
+      text-align: center;
+      margin-top: 20px;
+    }
+    @media (max-width: 768px) {
+      h1.main-heading {
+        font-size: 24px;
+      }
+    }
+
+    /* 4. Hiding Sidebar on Mobile */
+    .sidebar {
+      width: 300px;
+      float: left;
+      background: #ddd;
+      padding: 20px;
+      height: 200px;
+      box-sizing: border-box;
+    }
+    .main-content {
+      margin-left: 320px;
+      padding: 20px;
+      background: #eee;
+      box-sizing: border-box;
+    }
+    @media (max-width: 768px) {
+      .sidebar {
+        display: none;
+      }
+      .main-content {
+        margin-left: 0;
+      }
+    }
+
+    /* 5. Stacked Cards Layout */
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin: 20px;
+    }
+    .card {
+      padding: 20px;
+      background-color: #e4e4e4;
+      text-align: center;
+    }
+    @media (max-width: 768px) {
+      .card-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* 6. Changing Background Colors Based on Device */
+    body {
+      background-color: lightblue;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    @media (max-width: 768px) {
+      body {
+        background-color: lightgreen;
+      }
+    }
+
+    /* 7. Flexbox Layout Adjustment */
+    .flex-container {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px;
+    }
+    .item {
+      width: 30%;
+      padding: 10px;
+      background-color: lightgray;
+      text-align: center;
+    }
+    @media (max-width: 768px) {
+      .flex-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .item {
+        width: 80%;
+        margin: 10px 0;
+      }
+    }
+
+    /* 8. Font Weight Adjustment */
+    h1.font-weight-adjustment {
+      font-weight: bold;
+      text-align: center;
+    }
+    @media (max-width: 768px) {
+      h1.font-weight-adjustment {
+        font-weight: normal;
+      }
+    }
+
+    /* 9. Adjusting Button Size for Touch Devices */
+    button {
+      padding: 10px 20px;
+      font-size: 14px;
+      margin: 20px auto;
+      display: block;
+    }
+    @media (max-width: 768px) {
+      button {
+        padding: 15px 30px;
+        font-size: 16px;
+      }
+    }
+
+    /* 10. Changing the Layout of Images */
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 20px auto;
+    }
+    @media (max-width: 768px) {
+      img {
+        width: 100%;
+      }
+    }
+
+    /* Bonus: Combining Multiple Media Queries */
+    h1.responsive-font {
+      font-size: 24px;
+      text-align: center;
+      margin-top: 40px;
+    }
+    @media (max-width: 1024px) {
+      h1.responsive-font {
+        font-size: 20px;
+      }
+    }
+    @media (max-width: 768px) {
+      h1.responsive-font {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. Mobile-Friendly Navigation -->
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <!-- 2. Two-Column to Single-Column Layout -->
+  <div class="container">
+    <div class="content">Content 1</div>
+    <div class="content">Content 2</div>
+  </div>
+
+  <!-- 3. Resizing Text for Mobile -->
+  <h1 class="main-heading">Welcome to My Website</h1>
+
+  <!-- 4. Hiding Sidebar on Mobile -->
+  <div class="sidebar">Sidebar Content</div>
+  <div class="main-content">Main Content</div>
+
+  <!-- 5. Stacked Cards Layout -->
+  <div class="card-container">
+    <div class="card">Card 1</div>
+    <div class="card">Card 2</div>
+    <div class="card">Card 3</div>
+  </div>
+
+  <!-- 7. Flexbox Layout Adjustment -->
+  <div class="flex-container">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+
+  <!-- 8. Font Weight Adjustment -->
+  <h1 class="font-weight-adjustment">Heading Title</h1>
+
+  <!-- 9. Adjusting Button Size for Touch Devices -->
+  <button>Click Me</button>
+
+  <!-- 10. Changing the Layout of Images -->
+  <img src="https://via.placeholder.com/600x400" alt="Sample Image">
+
+  <!-- Bonus: Combining Multiple Media Queries -->
+  <h1 class="responsive-font">Responsive Font Size</h1>
+
+</body>
+</html>
